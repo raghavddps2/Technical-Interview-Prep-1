@@ -74,7 +74,7 @@ class Test(unittest.TestCase):
         actual = get_products_of_all_ints_except_at_index([-7, -1, -4, -2])
         expected = [-8, -56, -14, -28]
         self.assertEqual(actual, expected)
-
+ 
     def test_error_with_empty_list(self):
         with self.assertRaises(Exception):
             get_products_of_all_ints_except_at_index([])
