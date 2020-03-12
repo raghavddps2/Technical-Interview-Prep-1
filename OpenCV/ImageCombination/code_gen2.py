@@ -56,7 +56,7 @@ cv2.rectangle(imgCanvas,(50,200),(150,800),(0,0,0),1)
 imgCanvas[200:800,850:950] = cv2.rotate(imgPropResize,cv2.ROTATE_90_CLOCKWISE)
 cv2.rectangle(imgCanvas,(850,200),(950,800),(0,0,0),1)
 
-imgCanvas = cv2.resize(imgCanvas,(400,400))
+# imgCanvas = cv2.resize(imgCanvas,(100,200))
 cv2.imwrite('composite_code1.png',imgCanvas)
 cv2.imshow("hi",imgCanvas)
 cv2.waitKey(0)
