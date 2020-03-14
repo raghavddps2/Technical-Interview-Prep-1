@@ -1,7 +1,9 @@
-from flask import Flask,render_template,request,send_file
+from flask import Flask,render_template,request,send_file,url_for
 import numpy as np
 import cv2
 import time
+
+
 app = Flask(__name__)
 
 
@@ -11,6 +13,7 @@ def index():
 
 @app.route('/generate_code',methods=['GET','POST'])
 def generate_code():
+
     Qr = request.form.get('inputQr',None)
     Bar = request.form.get('inputBar',None)
     Dm = request.form.get('inputDm',None)
@@ -18,10 +21,10 @@ def generate_code():
     Prop2 = request.form.get('inputProp2',None)
     Prop3 = request.form.get('inputProp3',None)
     size = request.form['size']
-    print(size,Prop3,Bar)
     Height,Width = map(int,size.split("X"))
     imgCanvas = np.zeros([Height, Width, 3], dtype=np.uint8)
     imgCanvas.fill(255)
+
 
     imgQr = cv2.imread(Qr)
     imgBar = cv2.imread(Bar)
@@ -103,8 +106,8 @@ def generate_code():
     cv2.rectangle(imgCanvas, (int(0.04 * Width), int(0.67 * Height)), (int(0.17 * Width), int(0.8 * Height)),
                   (101, 190, 255), -1)
     filename = "composite_code"+str(size)+".png"
-    cv2.imwrite(filename, imgCanvas)
-    return send_file(filename, mimetype='image/png')
+    cv2.imwrite("static/"+filename, imgCanvas)
+    return render_template('response.html',image = url_for("static", filename=filename))
 
 if __name__ == '__main__':
     app.run(debug=True)
