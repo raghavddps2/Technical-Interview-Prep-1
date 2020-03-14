@@ -1,10 +1,10 @@
 import cv2
 import numpy as np
 
-imgQr = cv2.imread("qr.png")
-imgBc = cv2.imread("bc.jpg")
-imgDm = cv2.imread("dm.png")
-imgProp = cv2.imread("prop.png")
+imgQr = cv2.imread("Skeleton/qr.png")
+imgBc = cv2.imread("Skeleton/bc.jpg")
+imgDm = cv2.imread("Skeleton/dm.png")
+imgProp = cv2.imread("Skeleton/prop.png")
 print(imgBc.shape)
 print(imgDm.shape)
 print(imgQr.shape)
