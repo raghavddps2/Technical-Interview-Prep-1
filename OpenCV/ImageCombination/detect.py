@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-img = cv2.imread("composite_code1.png")
+img = cv2.imread("composite_code.png")
 imgContours = img.copy()
 
 #PREPROCESSING!
@@ -14,6 +14,7 @@ imgCanny = cv2.Canny(imgBlur,10,50)
 
 countours,hierarchy = cv2.findContours(imgCanny,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
 cv2.drawContours(imgContours,countours,-1,(0,255,0),1)
-cv2.imshow("Marked contours",imgContours)
+img11 = cv2.resize(imgContours,(400,400))
+cv2.imshow("Marked contours",img11)
 cv2.imwrite("Composite_code_contours.png",imgContours)
 cv2.waitKey(0)

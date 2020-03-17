@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 imgQr = cv2.imread("Skeleton/qr.png")
-imgBc = cv2.imread("Skeleton/bc.jpg")
+imgBc = cv2.imread("Skeleton/bc.png")
 imgDm = cv2.imread("Skeleton/dm.png")
 imgProp = cv2.imread("Skeleton/prop.png")
 print(imgBc.shape)

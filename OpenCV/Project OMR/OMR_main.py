@@ -3,7 +3,7 @@ import utils
 import numpy as np
 
 ######################################
-path = "1.jpg"
+path = "code.jpg"
 widthImg = 400
 heightImg = 400
 questions = 5
@@ -29,7 +29,7 @@ cv2.drawContours(imgContours,countours,-1,(0,255,0),10)
 
 rectangleContours = utils.rectContour(countours)
 biggestContour = utils.getCornerPoints(rectangleContours[0])
-gradePoints = utils.getCornerPoints(rectangleContours[1])
+gradePoints = utils.getCornerPoints(rectangleContours[0])
 
 
 
