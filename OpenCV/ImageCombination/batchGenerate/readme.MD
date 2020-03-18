@@ -1,3 +1,3 @@
 ## To generate PCFs
 
-$$ python place.py number_of_PCF size_of_PCF
+$$ python place.py {number of PCF} {size of PCF}
