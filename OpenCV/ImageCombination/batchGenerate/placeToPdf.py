@@ -2,10 +2,12 @@ import cv2
 import numpy as np
 
 import sys
-
+import glob
 from qrGen import qrGen
 from barGen import barGen
 from dmGen import dmGen
+
+from PIL import Image
 
 #Defining the canvas width and height!
 Height = int(sys.argv[2])
@@ -59,7 +61,6 @@ for i in range(int(sys.argv[1])):
     imgPropResize1 = cv2.resize(imgPropResize1,(int(0.96 * Width) - int(0.83 * Width), int(0.64 * Height) - int(0.20 * Height)))
     imgCanvas[int(0.20 * Height):int(0.64 * Height), int(0.83 * Width):int(0.96 * Width)] = imgPropResize1
 
-
     #Rectangle for proprietry code3
     # cv2.rectangle(imgCanvas,(int(0.04*Width),int(.2*Height)),(int(0.17*Width),int(0.64*Height)),(0,0,0),1)
     #Place image at these coordinates
@@ -70,8 +71,6 @@ for i in range(int(sys.argv[1])):
     imgPropResize2 = cv2.resize(imgPropResize2,(int(0.17*Width)-int(0.04*Width),int(0.64*Height)-int(0.20*Height)))
     imgCanvas[int(0.20*Height):int(0.64*Height),int(0.04*Width):int(0.17*Width)] = imgPropResize2
 
-    
-
     #Rectangle for pivot1
     cv2.rectangle(imgCanvas,(int(0.83*Width),int(0.04*Height)),(int(0.96*Width),int(0.17*Height)),(101,190,255),-1)
     #Rectangle for pivot2
@@ -81,7 +80,14 @@ for i in range(int(sys.argv[1])):
     #Rectangle for pivot4
     cv2.rectangle(imgCanvas,(int(0.04*Width),int(0.67*Height)),(int(0.17*Width),int(0.8*Height)),(101,190,255),-1)
 
-
     cv2.imwrite("PCF/pcf"+str(i).zfill(4)+".png", imgCanvas)
     print("Saved: "+"PCF/pcf"+str(i).zfill(4)+".png")
     #cv2.waitKey(0)
+
+imgList = list()
+for i in (glob.glob("PCF/*")):
+    img = Image.open(i)
+    img = img.convert('RGB')
+    imgList.append(img)
+imgList.pop(0).save('PCF.pdf',resolution=100.0, save_all=True, append_images=imgList)
+
