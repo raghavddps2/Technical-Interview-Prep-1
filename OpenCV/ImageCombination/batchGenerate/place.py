@@ -24,6 +24,9 @@ for i in range(int(sys.argv[1])):
     imgCanvas = np.zeros([Height,Width,3],dtype=np.uint8)
     imgCanvas.fill(255)
 
+    #Rectangle for the code
+    # cv2.rectangle(imgCanvas, (int(0), int(0)), (int(Width), int(Height)), (0,0,255),5)
+
     #Rectangle for QR code
     cv2.rectangle(imgCanvas,(int(0.19*Width),int(.19*Height)),(int(0.81*Width),int(0.81*Height)),(0,0,0),1)
     #Place image at these coordinates
@@ -31,13 +34,13 @@ for i in range(int(sys.argv[1])):
     imgCanvas[int(0.2*Width):int(.8*Width),int(0.2*Height):int(0.8*Height)] = imgQrResize
 
     #Rectangle for Bar code
-    cv2.rectangle(imgCanvas,(int(0.03*Width),int(.82*Height)),(int(0.75*Width),int(0.97*Height)),(0,0,0),1)
+    cv2.rectangle(imgCanvas,(int(0.02*Width),int(.82*Height)),(int(0.72*Width),int(0.97*Height)),(0,0,0),1)
     #Place image at these coordinates
-    imgBarResize = cv2.resize(imgBc,(int(0.74*Width)-int(0.04*Width),int(0.96*Height)-int(0.83*Height)))
-    imgCanvas[int(0.83*Height):int(0.96*Height),int(0.04*Width):int(0.74*Width)] = imgBarResize
+    imgBarResize = cv2.resize(imgBc,(int(0.70*Width)-int(0.04*Width),int(0.96*Height)-int(0.83*Height)))
+    imgCanvas[int(0.83*Height):int(0.96*Height),int(0.04*Width):int(0.70*Width)] = imgBarResize
 
     #Rectangle for DataMatrix code
-    # cv2.rectangle(imgCanvas,(int(0.76*Width),int(.83*Height)),(int(0.96*Width),int(0.96*Height)),(0,0,0),1)
+    cv2.rectangle(imgCanvas,(int(0.74*Width),int(.82*Height)),(int(0.98*Width),int(0.97*Height)),(0,0,0),1)
     #Place image at these coordinates
     imgDmResize = cv2.resize(imgDm,(int(0.96*Width)-int(0.76*Width),int(0.96*Height)-int(0.83*Height)))
     imgCanvas[int(0.83*Height):int(0.96*Height),int(0.76*Width):int(0.96*Width)] = imgDmResize
