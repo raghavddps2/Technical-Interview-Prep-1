@@ -6,7 +6,7 @@ import sys
 from qrGen import qrGen
 from barGen import barGen
 from dmGen import dmGen
-
+from temp_gen import temp_gen
 #Defining the canvas width and height!
 Height = int(sys.argv[2])
 Width  = int(sys.argv[2])
@@ -14,13 +14,14 @@ Width  = int(sys.argv[2])
 for i in range(int(sys.argv[1])):
     #Reading images here
     imgQr = qrGen(i)
-    imgBc = barGen(i)
+    imgBc = temp_gen(i)
     imgDm = dmGen(i)
     imgProp = cv2.imread("prop.png")
     imgProp1 = cv2.imread("prop.png")
     imgProp2 = cv2.imread("prop2.png")
 
-
+    cv2.imshow("a",imgBc)
+    print(imgBc,imgQr)
     imgCanvas = np.zeros([Height,Width,3],dtype=np.uint8)
     imgCanvas.fill(255)
 
@@ -34,7 +35,8 @@ for i in range(int(sys.argv[1])):
     imgCanvas[int(0.2*Width):int(.8*Width),int(0.2*Height):int(0.8*Height)] = imgQrResize
 
     #Rectangle for Bar code
-    cv2.rectangle(imgCanvas,(int(0.02*Width),int(.82*Height)),(int(0.72*Width),int(0.97*Height)),(0,0,0),1)
+    cv2.rectangle(imgCanvas,(int(0.02*Width),int(.82*Height)),(int(0.72*Width),int(0.97*Height)),(0,0,0),2)
+    print(imgBc.shape)
     #Place image at these coordinates
     imgBarResize = cv2.resize(imgBc,(int(0.70*Width)-int(0.04*Width),int(0.96*Height)-int(0.83*Height)))
     imgCanvas[int(0.83*Height):int(0.96*Height),int(0.04*Width):int(0.70*Width)] = imgBarResize
