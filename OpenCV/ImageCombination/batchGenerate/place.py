@@ -26,7 +26,7 @@ for i in range(int(sys.argv[1])):
     imgCanvas.fill(255)
 
     #Rectangle for the code
-    # cv2.rectangle(imgCanvas, (int(0), int(0)), (int(Width), int(Height)), (0,0,255),5)
+    cv2.rectangle(imgCanvas, (int(0), int(0)), (int(Width), int(Height)), (0,0,255),10)
 
     #Rectangle for QR code
     cv2.rectangle(imgCanvas,(int(0.19*Width),int(.19*Height)),(int(0.81*Width),int(0.81*Height)),(0,0,0),1)
