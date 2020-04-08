@@ -1,4 +1,4 @@
-"This is the O(1) solution using doubly linked list and dictionary"
+"THis is the O(N) solution using queues."
 class Node(object):
     def __init__(self, key, x):
         self.key = key

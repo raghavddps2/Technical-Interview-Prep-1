@@ -3,7 +3,7 @@
 The File recursion Problem
 
 1. Basic Data structure/concept used
-    - Not a data structure but the beautiful concept of recursion
+    - Not a data structure but the concept of recursion
     - Though stack is the data structure used for the internal implementation of the stack(stack frames.)
 
 2. As taught in the lessons, the first thing i looked for was the base case, that was simply when there are no more directories, we simply have to print the files and return.

@@ -2,6 +2,10 @@
 
 The LRU cache problem
 
+Please note:
+    - Problem_1.py : O(1) solution using Doubly Linked List.
+    - Problem_1.1.py : O(n) solution using Queues.
+
 1. Basic Data structure used
     - Doubly Linked List
     - Dictionary

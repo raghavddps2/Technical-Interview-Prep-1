@@ -14,4 +14,14 @@ The Union and Intersection problem
 
 5. Time efficiency = Greater of (O(m) or O(n)) where m and n are the number of elements in the two linked lists.
 
-6. Space Efficiency = O(m+n) for the union case and O(n) or O(m) whichever is greater..
+6. Space Efficiency = O(m+n) for the union case and O(n) or O(m) whichever is greater.
+
+7. Please note: In the solution, the duplicate numbers are considered only once.
+    Reason: I just went through the intersection method defined on sets, and they also do intersection and union in the same way. Example shown below.
+    
+                            >>> a = {1,2,3,1}
+                            >>> b = {1,1,1,1}
+                            >>> a.intersection(b)
+                            {1}
+                            >>> a.union(b)
+                            {1, 2, 3}
