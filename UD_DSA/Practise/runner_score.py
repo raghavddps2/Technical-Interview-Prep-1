@@ -10,5 +10,3 @@ if __name__ == '__main__':
             print("hi")
             runner_score = i
     print(runner_score)
-
-main()
