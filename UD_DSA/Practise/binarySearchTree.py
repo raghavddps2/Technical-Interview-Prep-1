@@ -51,20 +51,20 @@ def height(root):
 
 def levelOrderTraversal(root):
 
-    if root == None:
+        if root == None:
+            return
+        q = Queue()
+        q.put(root)
+        print(root.data,end=" ")
+        while not q.empty():
+            curr = q.get()
+            if curr.left:
+                print(curr.left.data,end=" ")
+                q.put(curr.left)
+            if curr.right:
+                print(curr.right.data,end=" ")
+                q.put(curr.right)
         return
-    q = Queue()
-    q.put(root)
-    print(root.data,end=" ")
-    while not q.empty():
-        curr = q.get()
-        if curr.left:
-            print(curr.left.data,end=" ")
-            q.put(curr.left)
-        if curr.right:
-            print(curr.right.data,end=" ")
-            q.put(curr.right)
-    return
 
 
 bst = BinarySearchTree()
