@@ -22,6 +22,8 @@ def rotated_array_search(nums,target):
     Returns:
        int: Index or -1
     """
+    if len(nums) == 0:
+        return -1
     left = 0
     right = len(nums)-1
         
@@ -45,14 +47,14 @@ def rotated_array_search(nums,target):
     arr2_end = pivot-1
 
     if(target >= nums[arr1_start] and target <= nums[arr1_end]):
-        print("array1",nums[arr1_start:arr1_end+1])
+        # print("array1",nums[arr1_start:arr1_end+1])
         ans1 =  binarySearch(nums[arr1_start:arr1_end+1],target)
         if ans1 == -1:
             return -1
         else:
             return (arr1_start+ans1)
     else:
-        print("array2",nums[arr2_start:arr2_end+1])
+        # print("array2",nums[arr2_start:arr2_end+1])
         return binarySearch(nums[arr2_start:arr2_end+1],target)
 
 def linear_search(input_list, number):
@@ -80,25 +82,23 @@ test_function([[6, 7, 8, 1, 2, 3, 4], 8])
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])
 #Test case 5
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+#Test case 6 (Edge case)
+test_function([[],2])
+#Test case 7 (Edge case)
+test_function([[-1,-2,-3,-5,-4],-2])
 
 #Ouputs:
-# array2 [6, 7, 8, 9, 10]
 # Index:  0
-# array2 [6, 7, 8, 9, 10]
 # Pass
-# array1 [1, 2, 3, 4]
 # Index:  5
-# array1 [1, 2, 3, 4]
 # Pass
-# array2 [6, 7, 8]
 # Index:  2
-# array2 [6, 7, 8]
 # Pass
-# array1 [1, 2, 3, 4]
 # Index:  3
-# array1 [1, 2, 3, 4]
 # Pass
-# array2 [6, 7, 8]
 # Index:  -1
-# array2 [6, 7, 8]
+# Pass
+# Index:  -1
+# Pass
+# Index:  1
 # Pass

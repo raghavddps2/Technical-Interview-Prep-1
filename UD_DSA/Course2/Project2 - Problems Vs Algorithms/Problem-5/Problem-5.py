@@ -68,6 +68,7 @@ def f(prefix):
         else:
             print(prefix + " not found")
     else:
+        print("No matches")
         print('')
 
 #Input 1
@@ -87,5 +88,36 @@ print("Input 3")
 prefix = "f"
 f(prefix)
 
+#Input 4
+print("Input 4")
+prefix = "ant"
+f(prefix)
+
+#Input 5 (Edge case)
+print("Input 5")
+prefix = ""
+f(prefix)
+
 #Outputs
-# Input x
+# Input 1: 
+# ie
+# igger
+# igonometry
+# ipod
+
+# Input 2
+# t
+# thology
+# tagonist
+# tonym
+
+# Input 3
+# un
+# unction
+# actory
+# Input 4
+# hology
+# agonist
+# onym
+# Input 5
+# No matches

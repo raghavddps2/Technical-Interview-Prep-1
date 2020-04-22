@@ -1,4 +1,3 @@
-import math
 def sqrt(number):
     """
     Calculate the floored square root of a number
@@ -11,7 +10,8 @@ def sqrt(number):
     We will simply use the Binary search algorithm to find the square root, and we will be done in O(log(n))
     """
 
-
+    if number < 0:
+        return "Square root of negative numbers is not possible"
     low = 0.0
     high = float(number+1)
 
@@ -22,7 +22,7 @@ def sqrt(number):
         else:
             high = mid
 
-    return int(math.floor(high))
+    return int(high)
 
 #Test case 1
 n = 16
@@ -34,6 +34,10 @@ print("Square root of {} is: {}".format(n,sqrt(n)))
 
 #Test case 3(EDGE CASE)
 n = 0
+print("Square root of {} is: {}".format(n,sqrt(n)))
+
+#Test case 4 (Edge case)
+n = -25
 print("Square root of {} is: {}".format(n,sqrt(n)))
 
 

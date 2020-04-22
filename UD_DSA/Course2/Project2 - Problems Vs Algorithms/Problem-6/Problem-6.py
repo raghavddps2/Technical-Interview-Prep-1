@@ -38,6 +38,10 @@ print ("Pass" if (-1 == get_min_max(l)) else "Fail")
 l = [2,5,1,4,8,9,56,76,43,56,7,8,9,6,4]
 print ("Pass" if ((1,76) == get_min_max(l)) else "Fail")
 
+#Test case 5 (Including negative numbers)
+l = [-2,-4,100,-10000,34,-23,2,100,21]
+print ("Pass" if ((-10000,100) == get_min_max(l)) else "Fail")
+
 # Output
 # Maximum minimum pair is:  (0, 9)
 # Pass
@@ -46,4 +50,6 @@ print ("Pass" if ((1,76) == get_min_max(l)) else "Fail")
 # Array is empty!
 # Pass
 # Maximum minimum pair is:  (1, 76)
+# Pass
+# Maximum minimum pair is:  (-10000, 100)
 # Pass
