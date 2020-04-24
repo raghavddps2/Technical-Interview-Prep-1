@@ -73,7 +73,6 @@ for i in range(int(sys.argv[1])):
     # cv2.imwrite("./prop/" + image, imgPropResize1)
     imgCanvas[int(0.20 * Height):int(0.64 * Height), int(0.83 * Width):int(0.96 * Width)] = imgPropResize1
 
-
     #Rectangle for proprietry code3
     cv2.rectangle(imgCanvas,(int(0.03*Width),int(.19*Height)),(int(0.18*Width),int(0.65*Height)),(0,0,0),2)
     #Place image at these coordinates
