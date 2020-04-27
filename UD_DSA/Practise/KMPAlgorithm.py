@@ -9,6 +9,7 @@ def computeLPSArray(pattern,m,lps):
     lps[0] = 0 
 
     while i < m:
+        # print("holo1")
         if pattern[i] == pattern[len]:
             lps[i] = len + 1
             i = i + 1
@@ -16,7 +17,9 @@ def computeLPSArray(pattern,m,lps):
         else:
             if len != 0:
                 len = lps[i-1]
+                i = i + 1
             else:
+                len = 0
                 lps[i] = 0
                 i = i + 1
 
@@ -27,6 +30,7 @@ def KMPSearch(text,pattern):
 
     #This will be our longest prefix suffix array.
     lps = [0]*M 
+    # print("holo")
     computeLPSArray(pattern,M,lps)
 
     i = 0 #Pointer for the text
@@ -43,6 +47,7 @@ def KMPSearch(text,pattern):
             else:
                 #If this happens, all we have to do is increment i.
                 i = i + 1
+        # print("hi")
         if j == M:
             #We have came to the end of the pattern
             print(i-j)
@@ -50,4 +55,4 @@ def KMPSearch(text,pattern):
             j = lps[j-1]
 
 #This algorithm is applied a lot in case when we have DNA sequence mathcing.
-KMPSearch("nitinitinitin","nitin")
+KMPSearch("mississippi","issipi")
