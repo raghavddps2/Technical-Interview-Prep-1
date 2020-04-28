@@ -24,7 +24,6 @@ print("[INFO] fitting anomaly detection model...")
 model = IsolationForest(n_estimators=100, contamination=0.01,
 	random_state=42)
 model.fit(data)
-
 # serialize the anomaly detection model to disk
 f = open(args["model"], "wb")
 f.write(pickle.dumps(model))

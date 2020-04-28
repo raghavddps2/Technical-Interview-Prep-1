@@ -28,7 +28,8 @@ features = quantify_image(hsv, bins=(3, 3, 3))
 # use the anomaly detector model and extracted features to determine
 # if the example image is an anomaly or not
 preds = model.predict([features])[0]
-print(preds)
+preds1 = model.predict([features])
+print(preds1)
 label = "anomaly" if preds == -1 else "normal"
 color = (0, 0, 255) if preds == -1 else (0, 255, 0)
 
